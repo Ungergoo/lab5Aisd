@@ -33,20 +33,15 @@ def Iteratively(n):
 
 
 
-# подсчёт времени для рекурсии
 start_time = time.time()
 f_rec = F(n)
 end_time = time.time()
 rec_time = end_time - start_time
 
-# подсчёт времени для итерации
 start_time = time.time()
 f_iter = Iteratively(n)
 end_time = time.time()
 iter_time = end_time - start_time
-
-
-#вывод времени
 print("F({}) = {} (рекурсивно в {:.6f} секунд)".format(n, f_rec, rec_time))
 print("F({}) = {} (итеративно в {:.6f} секунд)".format(n, f_iter, iter_time))
 
@@ -70,7 +65,6 @@ for n in n_values:
     iter_times.append(end - start)
 
 
-# таблица
 table = []
 for i, n in enumerate(n_values):
     table.append([n, rec_times[i], iter_times[i], rec_values[i], iter_values[i]])
@@ -81,7 +75,6 @@ for j in table:
     print("{:<10}|{:<22}|{:<22}|{:<25}|{:<30}".format(j[0], j[1], j[2], j[3], j[4]))
 
 
-# графики
 plt.plot(n_values, rec_times, label="Рекурсия")
 plt.plot(n_values, iter_times, label="Итерация")
 plt.xlabel("n")
